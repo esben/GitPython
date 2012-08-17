@@ -439,7 +439,8 @@ class CmdFetchInfo(FetchInfo):
 		elif ref_type_name == "tag":
 			ref_type = TagReference
 		else:
-			raise TypeError("Cannot handle reference type: %r" % ref_type_name)
+			# Hmm...  Instead of bailing out when somebody places random ref types in their repo, why not just try to ignore it?
+			return None
 		#END handle ref type
 			
 		# create ref instance
